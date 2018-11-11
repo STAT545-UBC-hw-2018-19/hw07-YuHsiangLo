@@ -1,0 +1,32 @@
+---
+title: "Examples of using country_geo"
+author: "Roger Yu-Hsiang Lo"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Examples of using country_geo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE
+)
+```
+
+## Use country areas to compute population density
+
+```{r}
+library(gapminder)
+library(dplyr)
+
+gapminder %>%
+  filter(year == 2007, continent == "Asia") %>%
+  left_join(., country_geo, by = "country") %>%
+  mutate(density = pop / area) %>%
+  select(country, pop, area, density) %>%
+  knitr::kable()
+```

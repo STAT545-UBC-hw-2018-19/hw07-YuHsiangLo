@@ -1,0 +1,143 @@
+country	iso_num	latitude	longitude
+Afghanistan	4	33	65
+Albania	8	41	20
+Algeria	12	28	3
+Angola	24	-12.5	18.5
+Argentina	32	-34	-64
+Australia	36	-27	133
+Austria	40	47.3333	13.3333
+Bahrain	48	26	50.55
+Bangladesh	50	24	90
+Belgium	56	50.8333	4
+Benin	204	9.5	2.25
+Bolivia	68	-17	-65
+Bosnia and Herzegovina	70	44	18
+Botswana	72	-22	24
+Brazil	76	-10	-55
+Bulgaria	100	43	25
+Burkina Faso	854	13	-2
+Burundi	108	-3.5	30
+Cambodia	116	13	105
+Cameroon	120	6	12
+Canada	124	60	-95
+Central African Republic	140	7	21
+Chad	148	15	19
+Chile	152	-30	-71
+China	156	35	105
+Colombia	170	4	-72
+Comoros	174	-12.1667	44.25
+Congo, Dem. Rep.	180	0	25
+Congo, Rep.	178	-1	15
+Costa Rica	188	10	-84
+Cote d'Ivoire	384	8	-5
+Croatia	191	45.1667	15.5
+Cuba	192	21.5	-80
+Czech Republic	203	49.75	15.5
+Denmark	208	56	10
+Djibouti	262	11.5	43
+Dominican Republic	214	19	-70.6667
+Ecuador	218	-2	-77.5
+Egypt	818	27	30
+El Salvador	222	13.8333	-88.9167
+Equatorial Guinea	226	2	10
+Eritrea	232	15	39
+Ethiopia	231	8	38
+Finland	246	64	26
+France	250	46	2
+Gabon	266	-1	11.75
+Gambia	270	13.4667	-16.5667
+Germany	276	51	9
+Ghana	288	8	-2
+Greece	300	39	22
+Guatemala	320	15.5	-90.25
+Guinea	324	11	-10
+Guinea-Bissau	624	12	-15
+Haiti	332	19	-72.4167
+Honduras	340	15	-86.5
+Hong Kong, China	344	22.25	114.1667
+Hungary	348	47	20
+Iceland	352	65	-18
+India	356	20	77
+Indonesia	360	-5	120
+Iran	364	32	53
+Iraq	368	33	44
+Ireland	372	53	-8
+Israel	376	31.5	34.75
+Italy	380	42.8333	12.8333
+Jamaica	388	18.25	-77.5
+Japan	392	36	138
+Jordan	400	31	36
+Kenya	404	1	38
+Korea, Dem. Rep.	410	37	127.5
+Korea, Rep.	410	37	127.5
+Kuwait	414	29.3375	47.6581
+Lebanon	422	33.8333	35.8333
+Lesotho	426	-29.5	28.5
+Liberia	430	6.5	-9.5
+Libya	434	25	17
+Madagascar	450	-20	47
+Malawi	454	-13.5	34
+Malaysia	458	2.5	112.5
+Mali	466	17	-4
+Mauritania	478	20	-12
+Mauritius	480	-20.2833	57.55
+Mexico	484	23	-102
+Mongolia	496	46	105
+Montenegro	499	42	19
+Morocco	504	32	-5
+Mozambique	508	-18.25	35
+Myanmar	104	22	98
+Namibia	516	-22	17
+Nepal	524	28	84
+Netherlands	528	52.5	5.75
+New Zealand	554	-41	174
+Nicaragua	558	13	-85
+Niger	562	16	8
+Nigeria	566	10	8
+Norway	578	62	10
+Oman	512	21	57
+Pakistan	586	30	70
+Panama	591	9	-80
+Paraguay	600	-23	-58
+Peru	604	-10	-76
+Philippines	608	13	122
+Poland	616	52	20
+Portugal	620	39.5	-8
+Puerto Rico	630	18.25	-66.5
+Reunion	638	-21.1	55.6
+Romania	642	46	25
+Rwanda	646	-2	30
+Sao Tome and Principe	678	1	7
+Saudi Arabia	682	25	45
+Senegal	686	14	-14
+Serbia	688	44	21
+Sierra Leone	694	8.5	-11.5
+Singapore	702	1.3667	103.8
+Slovak Republic	703	48.6667	19.5
+Slovenia	705	46	15
+Somalia	706	10	49
+South Africa	710	-29	24
+Spain	724	40	-4
+Sri Lanka	144	7	81
+Sudan	736	15	30
+Swaziland	748	-26.5	31.5
+Sweden	752	62	15
+Switzerland	756	47	8
+Syria	760	35	38
+Taiwan	158	23.5	121
+Tanzania	834	-6	35
+Thailand	764	15	100
+Togo	768	8	1.1667
+Trinidad and Tobago	780	11	-61
+Tunisia	788	34	9
+Turkey	792	39	35
+Uganda	800	1	32
+United Kingdom	826	54	-2
+United States	840	38	-97
+Uruguay	858	-33	-56
+Venezuela	862	8	-66
+Vietnam	704	16	106
+West Bank and Gaza	275	32	35.25
+Yemen, Rep.	887	15	48
+Zambia	894	-15	30
+Zimbabwe	716	-20	30

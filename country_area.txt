@@ -1,0 +1,143 @@
+country	area
+Afghanistan	647500
+Albania	28748
+Algeria	2381740
+Angola	1246700
+Argentina	2766890
+Australia	7686850
+Austria	83870
+Bahrain	665
+Bangladesh	144000
+Belgium	30528
+Benin	112620
+Bolivia	1098580
+Bosnia and Herzegovina	51129
+Botswana	600370
+Brazil	8511965
+Bulgaria	110910
+Burkina Faso	274200
+Burundi	27830
+Cambodia	181040
+Cameroon	475440
+Canada	9984670
+Central African Republic	622984
+Chad	1284000
+Chile	756950
+China	9596960
+Colombia	1138910
+Comoros	2170
+Congo, Dem. Rep.	2345410
+Congo, Rep.	342000
+Costa Rica	51100
+Cote d'Ivoire	322460
+Croatia	56542
+Cuba	110860
+Czech Republic	78866
+Denmark	43094
+Djibouti	23000
+Dominican Republic	48730
+Ecuador	283560
+Egypt	1001450
+El Salvador	21040
+Equatorial Guinea	28051
+Eritrea	121320
+Ethiopia	1127127
+Finland	338145
+France	547030
+Gabon	267667
+Gambia	11300
+Germany	357021
+Ghana	239460
+Greece	131940
+Guatemala	108890
+Guinea	245857
+Guinea-Bissau	36120
+Haiti	27750
+Honduras	112090
+Hong Kong, China	1092
+Hungary	93030
+Iceland	103000
+India	3287590
+Indonesia	1919440
+Iran	1648000
+Iraq	437072
+Ireland	70280
+Israel	20770
+Italy	301230
+Jamaica	10991
+Japan	377835
+Jordan	92300
+Kenya	582650
+Korea, Dem. Rep.	120540
+Korea, Rep.	98480
+Kuwait	17820
+Lebanon	10400
+Lesotho	30355
+Liberia	111370
+Libya	1759540
+Madagascar	587040
+Malawi	118480
+Malaysia	329750
+Mali	1240000
+Mauritania	1030700
+Mauritius	2040
+Mexico	1972550
+Mongolia	1564116
+Montenegro	13812
+Morocco	446550
+Mozambique	801590
+Myanmar	678500
+Namibia	825418
+Nepal	147181
+Netherlands	41526
+New Zealand	268680
+Nicaragua	129494
+Niger	1267000
+Nigeria	923768
+Norway	323802
+Oman	212460
+Pakistan	803940
+Panama	78200
+Paraguay	406750
+Peru	1285220
+Philippines	300000
+Poland	312685
+Portugal	92391
+Puerto Rico	13790
+Reunion	2517
+Romania	237500
+Rwanda	26338
+Sao Tome and Principe	1001
+Saudi Arabia	1960582
+Senegal	196190
+Serbia	88361
+Sierra Leone	71740
+Singapore	693
+Slovak Republic	48845
+Slovenia	20273
+Somalia	637657
+South Africa	1219912
+Spain	504782
+Sri Lanka	65610
+Sudan	2505810
+Swaziland	17363
+Sweden	449964
+Switzerland	41290
+Syria	185180
+Taiwan	35980
+Tanzania	945087
+Thailand	514000
+Togo	56785
+Trinidad and Tobago	5128
+Tunisia	163610
+Turkey	780580
+Uganda	236040
+United Kingdom	244820
+United States	9631420
+Uruguay	176220
+Venezuela	912050
+Vietnam	329560
+West Bank and Gaza	6220
+Yemen, Rep.	527970
+Zambia	752614
+Zimbabwe	390580
