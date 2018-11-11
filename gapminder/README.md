@@ -5,6 +5,7 @@
     -   [How to use color scheme in `ggplot2`](#how-to-use-color-scheme-in-ggplot2)
     -   [How to use color scheme in base graphics](#how-to-use-color-scheme-in-base-graphics)
     -   [ISO 3166-1 country codes](#iso-3166-1-country-codes)
+    -   [Latitudes, longitudes, and surface areas](#latitudes-longitudes-and-surface-areas)
     -   [What is `gapminder` good for?](#what-is-gapminder-good-for)
     -   [How this sausage was made](#how-this-sausage-was-made)
     -   [Plain text delimited files](#plain-text-delimited-files)
@@ -16,7 +17,7 @@
 gapminder
 =========
 
-Excerpt from the [Gapminder](http://www.gapminder.org/data/) data. The main object in this package is the `gapminder` data frame or "tibble". There are other goodies, such as the data in tab delimited form, a larger unfiltered dataset, premade color schemes for the countries and continents, and ISO 3166-1 country codes.
+Excerpt from the [Gapminder](http://www.gapminder.org/data/) data. The main object in this package is the `gapminder` data frame or "tibble". There are other goodies, such as the data in tab delimited form, a larger unfiltered dataset, premade color schemes for the countries and continents, ISO 3166-1 country codes, latitudes and longitude, and surface areas.
 
 The `gapminder` data frames include six variables, ([Gapminder.org documentation page](http://www.gapminder.org/data/documentation/)):
 
@@ -49,7 +50,7 @@ install.packages("gapminder")
 Or you can install `gapminder` from GitHub:
 
 ``` r
-devtools::install_github("jennybc/gapminder")
+devtools::install_github("STAT545-UBC-students/hw07-YuHsiangLo/gapminder")
 ```
 
 Load it and test drive with some data aggregation and plotting:
@@ -162,11 +163,38 @@ gapminder %>%
 #> into character vector
 #> # A tibble: 3 x 4
 #>   country continent iso_alpha iso_num
-#>   <chr>   <fct>     <chr>       <int>
+#>   <chr>   <fct>     <chr>       <dbl>
 #> 1 Kenya   Africa    KEN           404
 #> 2 Peru    Americas  PER           604
 #> 3 Syria   Asia      SYR           760
 ```
+
+### Latitudes, longitudes, and surface areas
+
+The `country_geo` data frame provides the average latitudes and longitudes and surface areas for all the countries in the `gapminder` data frame. This additional information can be used to generate more informative plots.
+
+``` r
+library(ggmap)
+
+gapminder %>%
+  filter(year == 2007) %>%
+  left_join(., country_geo, by = "country") %>%
+  mutate(density = pop / area) %>%
+  ggplot(aes(x = longitude, y = latitude, size = density, color = lifeExp)) +
+  theme_bw() +
+  borders("world", colour = "gray80", fill = "gray75") +
+  geom_point() +
+  scale_size_area() +
+  scale_size_continuous(name = "Pop. density") +
+  scale_color_continuous(name = "Life exp.") +
+  labs(title = "Population density and life expectancy in 2007") +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank())
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ### What is `gapminder` good for?
 
@@ -270,16 +298,19 @@ citation("gapminder")
 #> 
 #> To cite package 'gapminder' in publications use:
 #> 
-#>   Jennifer Bryan (2017). gapminder: Data from Gapminder. R package
-#>   version 0.3.0. https://CRAN.R-project.org/package=gapminder
+#>   Jennifer Bryan and Roger Yu-Hsiang Lo (2018). gapminder: Data
+#>   from Gapminder. https://github.com/jennybc/gapminder,
+#>   http://www.gapminder.org/data/,
+#>   https://doi.org/10.5281/zenodo.594018.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
 #>     title = {gapminder: Data from Gapminder},
-#>     author = {Jennifer Bryan},
-#>     year = {2017},
-#>     note = {R package version 0.3.0},
-#>     url = {https://CRAN.R-project.org/package=gapminder},
+#>     author = {Jennifer Bryan and Roger Yu-Hsiang Lo},
+#>     year = {2018},
+#>     note = {https://github.com/jennybc/gapminder,
+#> http://www.gapminder.org/data/,
+#> https://doi.org/10.5281/zenodo.594018},
 #>   }
 ```

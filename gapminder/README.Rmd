@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 set.seed(1)
 ```
 
-Excerpt from the [Gapminder](http://www.gapminder.org/data/) data. The main object in this package is the `gapminder` data frame or "tibble". There are other goodies, such as the data in tab delimited form, a larger unfiltered dataset, premade color schemes for the countries and continents, and ISO 3166-1 country codes.
+Excerpt from the [Gapminder](http://www.gapminder.org/data/) data. The main object in this package is the `gapminder` data frame or "tibble". There are other goodies, such as the data in tab delimited form, a larger unfiltered dataset, premade color schemes for the countries and continents, ISO 3166-1 country codes, latitudes and longitude, and surface areas.
 
 The `gapminder` data frames include six variables, ([Gapminder.org documentation page](http://www.gapminder.org/data/documentation/)):
 
@@ -55,7 +55,7 @@ install.packages("gapminder")
 Or you can install `gapminder` from GitHub:
 
 ```{r eval = FALSE}
-devtools::install_github("jennybc/gapminder")
+devtools::install_github("STAT545-UBC-students/hw07-YuHsiangLo/gapminder")
 ```
 
 Load it and test drive with some data aggregation and plotting:
@@ -143,6 +143,32 @@ gapminder %>%
  select(country, continent) %>% 
  left_join(country_codes)
 ```
+
+### Latitudes, longitudes, and surface areas
+
+The `country_geo` data frame provides the average latitudes and longitudes and surface areas for all the countries in the `gapminder` data frame. This additional information can be used to generate more informative plots.
+
+```{r message = FALSE}
+library(ggmap)
+
+gapminder %>%
+  filter(year == 2007) %>%
+  left_join(., country_geo, by = "country") %>%
+  mutate(density = pop / area) %>%
+  ggplot(aes(x = longitude, y = latitude, size = density, color = lifeExp)) +
+  theme_bw() +
+  borders("world", colour = "gray80", fill = "gray75") +
+  geom_point() +
+  scale_size_area() +
+  scale_size_continuous(name = "Pop. density") +
+  scale_color_continuous(name = "Life exp.") +
+  labs(title = "Population density and life expectancy in 2007") +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank())
+```
+
 
 ### What is `gapminder` good for?
 
