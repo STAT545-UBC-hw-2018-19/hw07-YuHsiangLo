@@ -1,4 +1,4 @@
 library(testthat)
-library(gapminder)
+library(gapminderplus)
 
-test_check("gapminder")
+test_check("gapminderplus")

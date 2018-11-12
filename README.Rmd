@@ -1,0 +1,137 @@
+---
+title: "Homework 07: Building your own R package"
+author: "Roger Yu-Hsiang Lo"
+date: '2018-11-11'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.align = "center")
+```
+
+## R Markdown
+
+```{r}
+library(tidyverse)
+library(gapminder)
+library(ggmap)
+library(gganimate)
+
+gapminder %>%
+  filter(year == 2007) %>%
+  left_join(., country_geo, by = "country") %>%
+  mutate(density = pop / area) %>%
+  ggplot(aes(x = longitude, y = latitude, size = pop, color = lifeExp)) +
+  theme_bw() +
+  borders("world", colour = "gray80", fill = "gray75") +
+  geom_point() +
+  scale_size_area() +
+  scale_size_continuous(name = "Pop. density") +
+  scale_color_continuous(name = "Life exp.") +
+  labs(title = "Population density and life expectancy in 2007") +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank())
+```
+
+
+```{r}
+library(MASS)
+gapminder %>%
+  left_join(., country_geo, by = "country") %>%
+  ggplot(aes(x = abs(latitude), y = log(gdpPercap))) +
+  geom_point(aes(color = continent)) +
+  geom_smooth(method = rlm, aes(group = year)) +
+  facet_wrap(~year)
+```
+
+
+```{r}
+gapminder %>%
+  left_join(., country_geo, by = "country") %>%
+  ggplot(aes(x = longitude, y = latitude, size = pop, color = lifeExp)) +
+  theme_bw() +
+  borders("world", colour = "gray80", fill = "gray75") +
+  geom_point() +
+  scale_size_area() +
+  scale_size_continuous(name = "Pop. density") +
+  scale_color_continuous(name = "Life exp.") +
+  labs(title = "Population density and life expectancy in 2007") +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank()) +
+  transition_time(year) +
+  ease_aes('linear')
+```
+
+```{r}
+library(MASS)
+gapminder %>%
+  left_join(., country_geo, by = "country") %>%
+  ggplot(aes(x = abs(latitude), y = log(gdpPercap))) +
+  theme_bw() +
+  geom_point(aes(color = continent)) +
+  geom_smooth(method = rlm, se = FALSE) +
+  labs(title = 'Year: {frame_time}', x = 'Latitude', y = 'gdpPercap') +
+  transition_time(year) +
+  ease_aes('linear')
+```
+
+```{r}
+gapminder %>%
+  left_join(., country_geo, by = "country") %>%
+  #filter(continent == "Asia") %>%
+  mutate(gdp = gdpPercap * pop,
+         gdpPerSqKm = gdp/area) %>%
+  group_by(year) %>%
+  top_n(5, gdpPerSqKm) %>%
+  ungroup() %>%
+  arrange(year, gdpPerSqKm) %>%
+  mutate(order = row_number()) %>%
+  ggplot(aes(x = order, y = gdpPerSqKm, group = year, fill = country)) +
+  theme_bw() +
+  scale_y_log10() +
+  geom_bar(stat = 'identity') +
+  geom_text(aes(label = country, y = 1), hjust = 0, size = 3) +  # Add texts on the bars
+  facet_wrap(~ year, scales = 'free_y') +
+  labs(x = 'Country', y = 'Life expectancy') +
+  theme(axis.text.y = element_blank(),  # Remove the text and ticks of the y axis
+        axis.ticks.y = element_blank(),
+        legend.position = 'none') +
+  coord_flip()  # Switch the x and y axises
+```
+
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  # Here comes the gganimate specific bits
+  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
+  transition_time(year) +
+  ease_aes('linear')
+```
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

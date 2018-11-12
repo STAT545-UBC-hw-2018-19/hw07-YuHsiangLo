@@ -1,5 +1,5 @@
-Package: gapminder
-Title: Data from Gapminder
+Package: gapminderplus
+Title: Data from Gapminder with additional geographic information
 Version: 0.3.0.9000
 Authors@R: c(
     person("Jennifer", "Bryan", email = "jenny@rstudio.com",
@@ -25,7 +25,7 @@ Suggests:
     knitr,
     rmarkdown
 Encoding: UTF-8
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Imports:
     tibble
 VignetteBuilder: knitr
