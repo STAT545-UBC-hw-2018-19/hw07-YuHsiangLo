@@ -4,14 +4,16 @@ This is a repository for Homework 07 by Roger Yu-Hsiang Lo. For the instruction 
 
 ## `gapminderplus` package
 
-The README of the package be found [here](https://github.com/STAT545-UBC-students/hw07-YuHsiangLo/tree/master/gapminder). The README contains examples of how to use the added data frame in `gapminderplus`.
+- In this assignment, I added one more data frame into the `gapminder` package and called the new package `gapminderplus`.
 
-To install the package, please use 
+- The README of the package be found [here](https://github.com/STAT545-UBC-students/hw07-YuHsiangLo/tree/master/gapminder). The README contains examples of how to use the added data frame in `gapminderplus`.
+
+- To install the package, please use 
 ```{r}
 devtools::install_github("STAT545-UBC-students/hw07-YuHsiangLo/gapminder")
 ```
 
-Then load the package with
+- Then load the package with
 ```{r}
 library(gapminderplus)
 ```
